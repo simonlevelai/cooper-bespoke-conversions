@@ -142,10 +142,10 @@
   .hero p.lede{margin:1.4rem auto 2.2rem;font-size:1.14rem;max-width:580px;color:rgba(255,255,255,.92)}
   .hero .cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
   .hero-fade{position:absolute;bottom:-1px;left:0;width:100%;z-index:2}
-  .scroll-cue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:3;color:rgba(255,255,255,.7);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-family:'Montserrat';font-weight:600;display:flex;flex-direction:column;align-items:center;gap:.4rem}
-  .scroll-cue .mouse{width:22px;height:34px;border:2px solid rgba(255,255,255,.6);border-radius:12px;position:relative}
-  .scroll-cue .mouse::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:7px;background:#fff;border-radius:2px;transform:translateX(-50%);animation:wheel 1.6s ease-in-out infinite}
-  @keyframes wheel{0%{opacity:0;transform:translate(-50%,0)}40%{opacity:1}80%{opacity:0;transform:translate(-50%,10px)}}
+  .scroll-cue{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);z-index:3;color:rgba(255,255,255,.75);display:grid;place-items:center;width:44px;height:44px}
+  .scroll-cue .chev{width:30px;height:30px;animation:bob 1.8s ease-in-out infinite}
+  .scroll-cue:hover .chev{color:var(--sun-2)}
+  @keyframes bob{0%,100%{transform:translateY(0);opacity:.65}50%{transform:translateY(7px);opacity:1}}
 
   /* animated hero scene parts */
   #heroSun{transform-origin:center;animation:sunGlow 6s ease-in-out infinite}
@@ -527,7 +527,7 @@
       <a href="#gallery" class="btn btn-ghost">See our work</a>
     </div>
   </div>
-  <a class="scroll-cue" href="#services" aria-label="Scroll down"><span class="mouse"></span>Scroll</a>
+  <a class="scroll-cue" href="#services" aria-label="Scroll down"><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
   <svg class="hero-fade" viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0 60 L1440 60 L1440 30 Q720 60 0 30 Z" fill="#1c2a22"/></svg>
 </section>
 
@@ -1018,6 +1018,7 @@
   // To use real photos: drop a JPG into assets/gallery/ matching the `img` name below.
   // If the file isn't there yet, the tile shows a styled placeholder automatically.
   const BUILDS=[
+    {cat:'adventure',  img:'boxer-workshop.jpg',    title:'In the workshop — Boxer conversion', desc:'A long-wheelbase Fiat Ducato / Peugeot Boxer in for conversion: side windows and roof in, ready for the fit-out. Real van, real workshop — more from this build soon.'},
     {cat:'offgrid',    img:'sprinter-offgrid.jpg',  title:'Sprinter — off-grid tourer',     desc:'Long-wheelbase Sprinter built for months on the road: full solar array, big lithium bank, fixed bed and a proper kitchen.'},
     {cat:'family',     img:'crafter-family.jpg',    title:'Crafter — family weekender',      desc:'Sleeps two plus two kids with a pop-top, swivel seats and a layout that packs away fast for the school run.'},
     {cat:'adventure',  img:'transit-adventure.jpg', title:'Transit — surf &amp; ski build',  desc:'Garage storage for boards and skis, diesel heater for cold mornings, and hard-wearing finishes that shrug off salt and snow.'},
